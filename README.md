@@ -1,39 +1,40 @@
 ![alt text][logo]
-[logo]: https://rew.github.com/rorynee/bankOfRoryRMIAssignment/master/bin/images/borlogo.png  "Bank Of Rory Logo"
+[logo]: https://raw.github.com/rorynee/bankOfRoryRMIAssignment/master/bin/images/borlogo.png  "Bank Of Rory Logo"
 
 # Bank of Rory RMI Assignment
 
 ## Assignment Outline
 Implementing a 3 Tier Object Oriented System
 Objective: This project will create a 3 tier system in Java:
-…**Tier 1** – Will consist of a GUI system implemented in Swing. The GUI should consist of a table on which the user can implement CRUD – Create, Read, Update and Delete actions.
-…**Tier 2** – Will consist of a Java server. The Java server will communicate with the client using RMI. The Java server will implement the Factory design pattern.
-…**Tier 3** – Will consist of Java Objects stored persistently. Do not implement the persistence tier using a DB.
+ …**Tier 1** – Will consist of a GUI system implemented in Swing. The GUI should consist of a table on which the user can implement CRUD – Create, Read, Update and Delete actions.
+ …**Tier 2** – Will consist of a Java server. The Java server will communicate with the client using RMI. The Java server will implement the Factory design pattern.
+ …**Tier 3** – Will consist of Java Objects stored persistently. Do not implement the persistence tier using a DB.
 
 ##Assignment concept
 I choose to generate the data set around bank customers and account as I felt it lent itself to C.R.U.D.L. operations.
-…Create – Make a new account 
-…Read – Search, Read transactions, read the statistics
-…Update – Update account information, deposit money and withdraw money
-…Delete – Delete an account
-…List – Show all accounts
+ …Create – Make a new account 
+ …Read – Search, Read transactions, read the statistics
+ …Update – Update account information, deposit money and withdraw money
+ …Delete – Delete an account
+ …List – Show all accounts
 I created a bank account system that can be used by bank teller to Create, Read, Update, Delete and List the accounts. As part of the bank accounts I also wanted to keep track of a customer’s transactions (withdraw and deposit) just like a real bank would do.
 Also I wanted to be able to generate dynamic statistics in relation to that data so I could generate 3d bar charts, line graph and other data in relation the account held in a bank. 
 
 ***
 ## Installation and Usage
-…1. Download the files in to Eclipse
-…2. Open 3 command prompts and navigate to the bin directory
-…In the bin directory **Run** rmic.exe program
-*…In my case with the project bin folder selected > “C:\Program Files\Java\jdk1.7.0_15\bin\rmic.exe” AccountFactory*
-…This Generates the Stub classes
+ …1. Download the files in to Eclipse
+ …2. Open 3 command prompts and navigate to the bin directory
+ …In the bin directory **Run** rmic.exe program
+ *…In my case with the project bin folder selected > “C:\Program Files\Java\jdk1.7.0_15\bin\rmic.exe” AccountFactory*
+ …This Generates the Stub classes
 
-.. In one of the command shells - start the RMI registry using the command “rmiregistry”
-*…In my case with the project bin folder selected > “C:\Program Files\Java\jdk1.7.0_15\bin\ rmiregistry.exe”*
+ .. In one of the command shells - start the RMI registry using the command “rmiregistry”
+ *…In my case with the project bin folder selected > “C:\Program Files\Java\jdk1.7.0_15\bin\ rmiregistry.exe”*
 
-…In another command shell – start the server “java ProductServer”
-*…In my case with the project bin folder selected > java BankOfRoryServer*
-…3. Open Eclipse and run the file MainGuiClass  
+ …In another command shell – start the server “java ProductServer”
+ *…In my case with the project bin folder selected > java BankOfRoryServer*
+
+ …3. Open Eclipse and run the file MainGuiClass  
 
 ***
 ##System Architecture
@@ -41,7 +42,6 @@ Also I wanted to be able to generate dynamic statistics in relation to that data
 I set up the project as described in the “Implementing a 3 Tier Object Oriented System” outline. My ‘AccountFactory’ class implements the ‘AccountInterface’ class. The ‘Account’ class is aggregated to the ‘AccountFactory’ class and the ‘transaction’ class is aggregated to the ‘Account’ class. The Account factory through the Account interface uses RMI’s mechanism of the RMI studs and the RMI registry to connect with the server. The server in turn can be connected by the ‘MainGuiClass’ and using an Identification (URL) to find the target machine where the RMI registry and remote objects are located. Then the ‘MainGuiClass’ requests the RMI registry on the target machine to return an object reference that applies to the well-known name or password. Then using the ‘AccountInterface’ it can pass the objects back and forth to each other.
 
 ## Class Descriptions
-***
 
 ###BankOfRoryServer
 
@@ -62,11 +62,11 @@ The account interface acts as an interface for the account factory. The RMI stub
 ###AccountFactory
 
 The account factory holds all the methods for the CRUDL actions.
-…Create – createAccount()
-…Read – getAccountById(), getAccountByField(), showALLTranactions(), getAgeOfClients, getStasAVStatB(), getAccountStatistics()
-…Update – updateAccount(),depositMoney(), withdrawMoney()
-…Delete – deleteAccount()
-…List – getAllAccounts()
+ …Create – createAccount()
+ …Read – getAccountById(), getAccountByField(), showALLTranactions(), getAgeOfClients, getStasAVStatB(), getAccountStatistics()
+ …Update – updateAccount(),depositMoney(), withdrawMoney()
+ …Delete – deleteAccount()
+ …List – getAllAccounts()
 
 The method called getInstance() makes only one instantiation of the AccountFactory and give back a reference to the object of the account factory if another class requests to make another object of the account factory.
 There is also a method to check weather an account number is in the system. I also have a onStart() and an onSave() method to serialize and desterilize the data to file.
@@ -83,12 +83,12 @@ Also here you see the inclusion of theURL and the AccountInterface used by RMI. 
 ###Methods
 
 I have employed the use of multiple helper methods here so as not to clutter up the code.
-…setUpMenu();	// set up the drop down menu
-…setUpPanals();	// set up the panels to be used
-…setUpLogo();	// Set up to Logo and the header label
-…setUpMiddlePanel();	// set up the middle panel
-…setUpRadioPanel();	// set up the panel with the radio buttons
-…setUpOutputPanel();	// set up the main display output area
+ …setUpMenu();	// set up the drop down menu
+ …setUpPanals();	// set up the panels to be used
+ …setUpLogo();	// Set up to Logo and the header label
+ …setUpMiddlePanel();	// set up the middle panel
+ …setUpRadioPanel();	// set up the panel with the radio buttons
+ …setUpOutputPanel();	// set up the main display output area
 
 The actionPerformed method handles all the events form the user.
 There other methods of note hare are the showHide() ( I mentioned earlier ) and the checkIntFields() and CheckDoubleFields(). The latter two function test weather a number is a number and not text.
