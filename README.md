@@ -17,9 +17,13 @@ Objective: This project will create a 3 tier system in Java:
 I choose to generate the data set around bank customers and account as I felt it lent itself to C.R.U.D.L. operations.
 
 Create – Make a new account
+
 Read – Search, Read transactions, read the statistics
+
 Update – Update account information, deposit money and withdraw money
+
 Delete – Delete an account
+
 List – Show all accounts
 
 I created a bank account system that can be used by bank teller to Create, Read, Update, Delete and List the accounts. As part of the bank accounts I also wanted to keep track of a customer’s transactions (withdraw and deposit) just like a real bank would do.
@@ -29,15 +33,19 @@ Also I wanted to be able to generate dynamic statistics in relation to that data
 ## Installation and Usage
 
  **1.** Download the files in to Eclipse
+ 
  **2.** Open 3 command prompts and navigate to the bin directory
  
  In one command shell, in the bin directory **Run** rmic.exe program. This Generates the Stub classes
+ 
  *In my case with the project bin folder selected > “C:\Program Files\Java\jdk1.7.0_15\bin\rmic.exe” AccountFactory*
 
  In another of the command shells - start the RMI registry using the command “rmiregistry”
+ 
  *In my case with the project bin folder selected > “C:\Program Files\Java\jdk1.7.0_15\bin\ rmiregistry.exe”*
 
  In another command shell – start the server “java ProductServer”
+ 
  *In my case with the project bin folder selected > java BankOfRoryServer*
 
  **3.** Open Eclipse and run the file MainGuiClass  
@@ -70,9 +78,13 @@ The account interface acts as an interface for the account factory. The RMI stub
 The account factory holds all the methods for the CRUDL actions.
 
  Create – createAccount()
+
  Read – getAccountById(), getAccountByField(), showALLTranactions(), getAgeOfClients, getStasAVStatB(), getAccountStatistics()
+
  Update – updateAccount(),depositMoney(), withdrawMoney()
+
  Delete – deleteAccount()
+
  List – getAllAccounts()
 
 The method called getInstance() makes only one instantiation of the AccountFactory and give back a reference to the object of the account factory if another class requests to make another object of the account factory.
@@ -92,10 +104,15 @@ Also here you see the inclusion of theURL and the AccountInterface used by RMI. 
 I have employed the use of multiple helper methods here so as not to clutter up the code.
 
  setUpMenu();	// set up the drop down menu
+
  setUpPanals();	// set up the panels to be used
+
  setUpLogo();	// Set up to Logo and the header label
+
  setUpMiddlePanel();	// set up the middle panel
+
  setUpRadioPanel();	// set up the panel with the radio buttons
+
  setUpOutputPanel();	// set up the main display output area
  
 The actionPerformed method handles all the events form the user.
