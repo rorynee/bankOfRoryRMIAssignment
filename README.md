@@ -1,7 +1,6 @@
-![alt text][logo]
+#![alt text][logo] Bank of Rory RMI Assignment
 [logo]: https://raw.github.com/rorynee/bankOfRoryRMIAssignment/master/bin/images/borlogo.png  "Bank Of Rory Logo"
 
-# Bank of Rory RMI Assignment
 
 ## Assignment Outline
 Implementing a 3 Tier Object Oriented System
@@ -56,7 +55,7 @@ Also I wanted to be able to generate dynamic statistics in relation to that data
 I set up the project as described in the “Implementing a 3 Tier Object Oriented System” outline. My ‘AccountFactory’ class implements the ‘AccountInterface’ class. The ‘Account’ class is aggregated to the ‘AccountFactory’ class and the ‘transaction’ class is aggregated to the ‘Account’ class. The Account factory through the Account interface uses RMI’s mechanism of the RMI studs and the RMI registry to connect with the server. The server in turn can be connected by the ‘MainGuiClass’ and using an Identification (URL) to find the target machine where the RMI registry and remote objects are located. Then the ‘MainGuiClass’ requests the RMI registry on the target machine to return an object reference that applies to the well-known name or password. Then using the ‘AccountInterface’ it can pass the objects back and forth to each other.
 
 ## Class Descriptions
-See classDiagram.png for more information. 
+See classdiagram.png for more information. 
 
 ###BankOfRoryServer
 
