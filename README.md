@@ -1,6 +1,7 @@
 #![alt text][logo] Bank of Rory RMI Assignment
 [logo]: https://raw.github.com/rorynee/bankOfRoryRMIAssignment/master/bin/images/borlogo.png  "Bank Of Rory Logo"
 
+[Click here to view demo video]( https://www.youtube.com/watch?v=fAkrr7ldYlQ "Implementing a 3 Tier Object Oriented System")
 
 ## Assignment Outline
 Implementing a 3 Tier Object Oriented System
