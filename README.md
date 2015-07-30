@@ -56,6 +56,7 @@ Also I wanted to be able to generate dynamic statistics in relation to that data
 I set up the project as described in the “Implementing a 3 Tier Object Oriented System” outline. My ‘AccountFactory’ class implements the ‘AccountInterface’ class. The ‘Account’ class is aggregated to the ‘AccountFactory’ class and the ‘transaction’ class is aggregated to the ‘Account’ class. The Account factory through the Account interface uses RMI’s mechanism of the RMI studs and the RMI registry to connect with the server. The server in turn can be connected by the ‘MainGuiClass’ and using an Identification (URL) to find the target machine where the RMI registry and remote objects are located. Then the ‘MainGuiClass’ requests the RMI registry on the target machine to return an object reference that applies to the well-known name or password. Then using the ‘AccountInterface’ it can pass the objects back and forth to each other.
 
 ## Class Descriptions
+See classDiagram.png for more information. 
 
 ###BankOfRoryServer
 
@@ -118,6 +119,10 @@ I have employed the use of multiple helper methods here so as not to clutter up 
 The actionPerformed method handles all the events form the user.
 There other methods of note hare are the showHide() ( I mentioned earlier ) and the checkIntFields() and CheckDoubleFields(). The latter two function test weather a number is a number and not text.
 I also have two different function that print the data to the table because I show the data different in the show history page. (printAccounts() and showTransactions()).
+
+##Additional Information
+
+Please view the Assignment3_WriteUp.pdf for further information about this assignment. 
 
 
 
