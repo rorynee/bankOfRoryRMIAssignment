@@ -16,11 +16,11 @@ Objective: This project will create a 3 tier system in Java:
 ##Assignment concept
 I choose to generate the data set around bank customers and account as I felt it lent itself to C.R.U.D.L. operations.
 
- Create – Make a new account 
- Read – Search, Read transactions, read the statistics
- Update – Update account information, deposit money and withdraw money
- Delete – Delete an account
- List – Show all accounts
+Create – Make a new account
+Read – Search, Read transactions, read the statistics
+Update – Update account information, deposit money and withdraw money
+Delete – Delete an account
+List – Show all accounts
 
 I created a bank account system that can be used by bank teller to Create, Read, Update, Delete and List the accounts. As part of the bank accounts I also wanted to keep track of a customer’s transactions (withdraw and deposit) just like a real bank would do.
 Also I wanted to be able to generate dynamic statistics in relation to that data so I could generate 3d bar charts, line graph and other data in relation the account held in a bank. 
@@ -97,7 +97,7 @@ I have employed the use of multiple helper methods here so as not to clutter up 
  setUpMiddlePanel();	// set up the middle panel
  setUpRadioPanel();	// set up the panel with the radio buttons
  setUpOutputPanel();	// set up the main display output area
-
+ 
 The actionPerformed method handles all the events form the user.
 There other methods of note hare are the showHide() ( I mentioned earlier ) and the checkIntFields() and CheckDoubleFields(). The latter two function test weather a number is a number and not text.
 I also have two different function that print the data to the table because I show the data different in the show history page. (printAccounts() and showTransactions()).
